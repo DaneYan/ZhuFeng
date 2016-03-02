@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自测</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        #tab{
+            height: 30px;
+            width: 400px;
+            background: lightblue;
+            margin: 0 auto;
+        }
+        #tab ul li{
+             height: 30px;
+             width: 100px;
+             float: left;
+             line-height: 30px;
+             background-color: lightgreen;
+         }
+        #tab div{
+            height: 200px;
+            width: 400px;
+            background: lightcoral;
+            margin: 0 auto;
+            display: none;
+        }
+
+        #tab div.show{
+           display: block;
+        }
+        #tab ul li.showTab{
+            background-color: lightblue;
+        }
+
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li  class="showTab">1</li>
+        <li >2</li>
+        <li >3</li>
+        <li >4</li>
+    </ul>
+
+
+    <div class="show">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+//    小示例1：基本的选项卡面板能够熟练写下来
+//    小示例2：九九乘法表
+//    小示例3：表格的隔行变行（比如说一共100行，第一行红，第二行蓝，第三行绿，第四行粉，
+//    第五行黄，以下按这个规律每五行交替一次）
+//    小示例4：冒泡排序和去重 (附加题，可以不考)
+//    小示例5：验证码（附加题，可以不考）
+//    小示例6：时间自动走（附加题，可以不考）
+//    小示例7：任意数求和（附加题，可以不考）
+//         8: 插入排序
+//         9:快速排序
+        //alert("df");
+//var arr = [1,2,1,1,1,1,4,5,6,4,5,3453,546,234,5,6,7455,6754,32,54];
+//
+//    小示例1：基本的选项卡面板能够熟练写下来
+    var oTab = document.getElementById("tab");
+    var oLi = oTab.getElementsByTagName("ul")[0].getElementsByTagName("li");
+    //alert(oLi.length);
+    var oDiv = document.getElementById("tab").getElementsByTagName("div");
+//alert(oDiv.length);
+    for(var i = 0;i<oLi.length;i++){
+        oLi[i].index = i;
+        oLi[i].onclick = function(){
+            changeTab(this.index);
+        }
+    }
+
+    function changeTab(j){
+        for(var i=0;i<oLi.length;i++){
+            oLi[i].className = "";
+            oDiv[i].className = "";
+        }
+
+        oLi[j].className = "showTab";
+        oDiv[j].className = "show";
+    }
+
+
+////   小示例2：九九乘法表
+//    var cfb = document.getElementById("chengfabiao");
+//    var txt = "";
+//    for(var i = 0;i<9;i++){
+//        for(var j =0;j<9;j++){
+//            txt += "<span>"+j+"*"+i+"="+i*j+"</span>";
+//        }
+//        txt = "<br /><br />"
+//    }
+</script>
+
+</body>
+</html>

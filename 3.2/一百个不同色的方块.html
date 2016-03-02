@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    function fn() {
+        var nWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        var nHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+        var nW = nWidth / 10;  //设置每个方块的高宽
+        var nH = nHeight / 10;
+
+        //创建文档碎片仓库,减少渲染
+        var of = document.createDocumentFragment();
+
+        //利用循环设置样式
+        for (var i = 0; i < 100; i++) {
+            for (var j = 0; j < 10; j++) {
+                var oDiv = document.createElement("div");
+                oDiv.style.width = nW + "px";
+                oDiv.style.height = nH + "px";
+                //oDiv.style.float = "left";
+                oDiv.style.position = "absolute";
+                oDiv.style.top = j * nH + "px";
+                oDiv.style.left = i * nW + "px";
+
+                var r = Math.floor(Math.random() * 255);
+                var g = Math.floor(Math.random() * 255);
+                var b = Math.floor(Math.random() * 255);
+                oDiv.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+                of.appendChild(oDiv);
+            }
+        }
+        document.body.appendChild(of);
+    }
+    var time1 = new Date();
+    fn();
+    var time2 = new Date();
+    alert(time2 - time1);
+</script>
+</body>
+</html>

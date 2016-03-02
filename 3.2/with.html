@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1"></div>
+<script type="text/javascript">
+    //with 内定义其他变量不会给with()内的主体，而是变成了全局的，无论加不加var
+
+    var oDiv = document.getElementById("div1");
+    with (oDiv.style) {
+        width = "100px";
+        height = "100px";
+        border = "1px solid red";
+        n = 123;
+    }
+    alert(oDiv.style.n);
+</script>
+
+</body>
+</html>

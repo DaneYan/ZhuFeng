@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			var a = [1,2,3,3,4,3,3,5,643,15,43,54,25,4353,4];
+			//var a = [3,2,1,7];
+			function insertSort(ary){
+				var temp,inner;
+				for (var outer = 1;outer<ary.length;outer++) {
+					inner = outer;
+					temp = ary[inner];
+					while(ary[inner-1] >= temp && inner >0){
+						ary[inner] = ary[inner-1];
+						--inner;
+					}
+					ary[inner] = temp;
+				}
+				//return ary;
+			}
+			
+			insertSort(a);
+			console.log(a);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+function fn(){
+	//alert(this);
+	}
+fn();
+document.documentElement.onclick=fn;
+var obj={fn8:fn}
+obj.fn8();
+//this关键字是谁，和在那儿定义的没有关系，只和在那儿执行有关系。定义的时候，不知道this是谁，只要运行的时候才知道this是指谁呢！
+//变量属于那个作用域，由它在那儿（作用域里）定义的有关系
+</script>
+

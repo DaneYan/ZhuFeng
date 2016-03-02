@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+function fn(str){
+	var a=[];
+	for(var i=0;i<str.length;i++){
+		a.push(str[i]);
+	}
+	var str2="";
+	/*while(a.length){
+		str2+=a.pop();
+	}*/
+	//a=["",0,null,undefined,false]
+	var temp=null
+	while(temp=a.pop()){//把while循环里的temp=a.pop()看成三步，第一步a.pop()运行，第二步把pop的返回值赋给temp，第三步是对temp做布尔运算
+		str2+=temp;
+	}
+	return str==str2;
+	
+}
+alert(fn("1234567654321"));
+str="1234567654321";
+
+
+
+String.prototype.reverse=function(){//这样就给字符串类上添加了一个reverse方法，那么以后所有的字符串实例都可以直接打点用这个方法
+	return this.split("").reverse().join("");	
+}
+//str.reverse();
+//str==str.split("").reverse().join("");
+/*if("0"){
+	
+}*/
+
+Array.prototype.clone=function(){
+	return this.slice(0);	
+}
+//a.reverse();
+//Array.reverse=function(){}
+Array.prototype.reverse=function(){
+	return 888;
+}
+a.reverse();
+</script>

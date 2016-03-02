@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title> new title </title>
+		
+		<meta charset="utf-8" />
+		<meta name="generator" content="editplus" />
+		<meta name="author" content="" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+  
+		<style type="text/css">
+			*{margin:0px;padding:0px;}
+			
+			#tab{
+				width:800px;
+				height:430px;
+				margin:0 auto;
+				border:0px red solid;
+			}
+			#top1{width:800px;height:30px;}
+			#bottom1{width:800px;height:400px;}
+			#tab ul{height:30px;width:800px;}
+			#tab ul li{
+				width:160px;
+				height:30px;
+				ling-height:30px;
+				text-align:center;
+				list-style:none;
+				background:#66ff00;
+				float:left;
+				cursor:pointer;
+				
+			}
+			#bottom1 div{
+				width:800px;
+				height:400px;
+				background:red;
+				display:none;
+			}
+			#tab #top1 ul li.selected{
+				background:#ff0033;
+				font-size:2px;
+			}
+			#bottom1 div.selectedDiv{
+			width:800px;
+				height:400px;
+				background:red;
+				display:block;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="tab">
+			<div id="top1">
+				<ul>
+					<li onclick="fn1(0)" class="selected">选项1</li>
+					<li onclick="fn1(1)">选项2</li>
+					<li onclick="fn1(2)">选项3</li>
+					<li onclick="fn1(3)">选项4</li>
+					<li onclick="fn1(4)">选项5</li>
+				</ul>
+			</div>
+			<div id="bottom1">
+				<div class="selectedDiv">内容1</div>
+				<div >内容2</div>
+				<div>内容3</div>
+				<div>内容4</div>
+				<div>内容5</div>
+			</div>
+		</div>
+
+
+
+		<script type="text/javascript">
+			var oLi = document.getElementById("tab").getElementsByTagName("li");
+			var oDiv = document.getElementById("bottom1").getElementsByTagName("div");
+			//alert(oDiv.length);
+			var n=0;
+			function fn1(e){
+				oLi[n].className="";
+				oDiv[n].className="";
+				oLi[e].className="selected";
+				oDiv[e].className="selectedDiv";
+				n=e;
+			}
+			/*oLi[0].onclick=function(){
+				fn1(0);
+			}
+			oLi[1].onclick=function(){
+				fn1(1);
+			}
+			oLi[2].onclick=function(){
+				fn1(2);
+			}
+			oLi[3].onclick=function(){
+				fn1(3);
+			}
+			oLi[4].onclick=function(){
+				fn1(4);
+			}*/
+
+		</script>
+	</body>
+</html>

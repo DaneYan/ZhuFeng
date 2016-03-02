@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			var ary = [1,2,3,4,5];
+//			alert(ary.pop());
+//			alert(ary.push());
+//			splice(star,deleteCount,val1,val2,..)从start位置删除deleteCount项，并从该处插入val1，val2，...
+//			a,97
+
+
+//			var i = 0;
+//			var a = [12,345,564,75,7,7,4,35];
+//			 a.sort(function(a,b){
+//			 	console.log(i++);
+//			 	return a-b;			 			
+//			 			
+//			 });
+//			console.log(a);
+
+
+//			var a = [12,345,564,75,7,7,4,35];
+//			//join()与split()互逆			
+//			alert(a.join());
+//			alert(a.concat("fg",543));
+
+
+//			function isPalindrome(word) {
+//				var s = [];
+//				for (var i = 0; i < word.length; ++i) {
+//					s.push(word[i]);
+//				}
+//				var rword = "";
+//				while (s.length > 0) {
+//					rword += s.pop();
+//				}
+//				if (word == rword) {
+//					return true;
+//				}
+//				else {
+//					return false;
+//				}
+//			}
+			
+			function fnYouHuaDeHuiWenPanDuan(word){
+				var temp = word.split(""); //将字符串转成数组
+				var a = temp.slice(0);//数组的复制
+				var rword = a.reverse();//翻转
+				//return temp==b?true:false;
+				
+				//数组的比较需遍历********************
+				if (temp == rword) {
+					return true;
+				}
+				else {
+					return false;
+				}a
+				
+			}
+			
+			var word = "";			
+			var word = "racecar";
+			if (fnYouHuaDeHuiWenPanDuan(word)) {
+				alert(word + " is a palindrome.");
+			}
+			else {
+				alert(word + " is not a palindrome.");
+			}
+
+
+//			var a = ["1"];
+//			var b = ["1"];
+//			alert(a==b);
+//			
+			
+			
+		</script>
+	</body>
+</html>

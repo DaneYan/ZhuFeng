@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+
+
+var f=function(){return true;};
+function f(){return true}
+g=function (){return false;};
+
+(function(){
+ if(f()&&[]==![]){
+		 f=function f(){return false;};
+		 function g(){return true;} 
+ }
+})();
+//[]==false
+//Number([].toString())
+//.+-!~|&
+alert(f());//true还是false?
+alert(g());//这个弹出什么，和那个闭包没一毛钱的关系
+//取非运算符!,指先把一个值转成布尔值，然后再取反
+1;
+(function(){})()
+</script>

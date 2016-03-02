@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var oLi = document.getElementById("tab").getElementsByTagName("li");
+
+    for(var i = 0;i<5;i++){
+        oLi[i].onclick = function(a){
+            return function(){  //不使用return function 将会立即执行
+                alert(a);
+            }
+        }(i);
+    }
+</script>
+
+</body>
+</html>

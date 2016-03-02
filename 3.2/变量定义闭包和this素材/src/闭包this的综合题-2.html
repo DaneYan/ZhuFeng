@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+作用域闭包、预解释和this关键字通关面试题
+</body>
+</html>
+<script>
+//下面的题是从360面试题里改造而来。
+//主要考试：作用域闭包、预解释和this关键字
+//注意：下面面试题里有三个number要分清：
+//1、全局的number；2、obj的属性number；3、匿名方法运行的那个闭包里的number，下面19行。22行的number就是19行定义的number
+var number = 2;
+var obj = {number : 4,
+	fn1 : ( function() {		 
+		this.number *= 2;
+		number=number*2;//注意这是个坑，可以console.log(number)一下;
+ 		var number=3;//注意这儿的number是要被预解释的
+			return function() {
+				this.number *= 2;//this是谁，这会不知道，运行的时候再知道呢！
+				number*=3;//number肯定是上一级作用域里的。既：变量值是什么，由在那儿定义决定。
+				alert(number);//每次运行这个函数的时候，会弹出什么来
+			}//这个匿名方法返回这个函数，fn1最终就是这个函数。
+	} )()//这个匿名函数运行就是一个闭包
+};
+
+var fn1 = obj.fn1;
+obj.fn1//这个属性就保存了匿名函数返回的那个函数的地址，则在20定义的这个函数就不能被销毁了，这个函数是在闭包里定义的。这个函数不能被销毁
+alert(number);//问这会会弹出什么结果
+fn1();//这会弹出什么结果 //
+//this.number是window下的number。2*2 4
+//number是原来的那个闭包里的number 3*3==9
+obj.fn1();//这次弹出什么结果9*3 number  27
+//obj.number*2==8
+number
+
+alert(window.number); //这会window.number的结果是什么 8
+alert(obj.number);   //这会obj.number的结果是什么 8
+
+</script>

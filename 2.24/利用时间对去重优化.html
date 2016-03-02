@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		function fnShuangFor(ary){
+			for (var outer = 0;outer<ary.length;outer++) {
+				
+				for (var inner = outer+1;inner<ary.length;inner++) {
+					if(ary[outer] == ary[inner]){
+						ary.splice(inner,1);
+						inner--;
+					}
+					
+				}
+			}
+			return ary;
+		}
+		function fnDuiXiangFa(a){
+			var obj = {};
+			for(var i = 0;i<a.length;i++){
+				if(obj[a[i]] == a[i]){
+					a.splice(i,1);
+					i--;
+				}
+				obj[a[i]] = a[i];
+			}
+			return a;
+		}
+		
+			var ary = [];
+			for (var i = 0;i<10000;i++) {
+				var random = Math.floor(Math.random()*7000);
+				ary.push(random);
+			}
+			var ary1 = ary.slice(0);
+			
+			var starTime = new Date;
+			ary = fnShuangFor(ary);
+			var endTime = new Date;
+			console.log(ary);
+			console.log(endTime-starTime);
+			
+			var starTime = new Date;
+			ary1 = fnDuiXiangFa(ary1);
+			var endTime = new Date;
+			console.log(ary1);
+			console.log(endTime-starTime+"对象法好");
+			
+			
+		</script>
+	</body>
+</html>

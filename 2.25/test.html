@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自我测试</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//冒泡排序；数组去重（两种方法）
+			var a = [1,2,3,3,4,3,3,5,643,15,43,54,25,4353,4];
+			function insertSort(ary){
+				var temp;//,inner;
+				for (var outer = 1;outer<ary.length;outer++) {
+					//inner = outer;
+					temp = ary[outer];
+					while(ary[outer-1] >= temp && outer >0){
+						ary[outer] = ary[outer-1];
+						--outer;
+					}
+					ary[outer] = temp;
+				}
+				//return ary;
+			}
+			
+			insertSort(a);
+			console.log(a);
+		</script>
+	</body>
+</html>

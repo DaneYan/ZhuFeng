@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #chengfabiao{
+            background-color: lightblue;
+            height: 800px;
+        }
+        #chengfabiao span{
+            width:90px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            /*border: 1px red solid;*/
+            float: left;
+            display: block;
+            background-color: aqua;
+        }
+        #chengfabiao span.bian{
+            background-color: #66ff00;
+        }
+        #chengfabiao span.bian1{
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+
+<div id = "chengfabiao"></div>
+
+<script type="text/javascript">
+    var cfb = document.getElementById("chengfabiao");
+    var txt = "";
+    for(var i = 1;i<=9;i++){
+        for(var j =1;j<=i;j++){
+            txt += "<span>"+j+"*"+i+"="+i*j+"</span>";
+        }
+        txt += "<br /><br />"
+    }
+    cfb.innerHTML = txt;
+    var span = document.getElementsByTagName("span");
+    for(var i = 0;i<span.length;i++) {
+        if (i % 3 == 0) {
+            span[i].className += "bian";
+        }else if(i%3 == 1){
+            span[i].className += "bian1"
+        }
+    }
+</script>
+</body>
+</html>

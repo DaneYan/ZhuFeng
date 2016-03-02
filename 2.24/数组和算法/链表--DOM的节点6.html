@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<ol>
+    <li>0</li>
+    <li>0</li>
+    <li>0</li>
+    <li>0</li>
+    <li>0</li>
+    <li>0</li>
+
+</ol>
+</body>
+</html>
+<script>
+var oUl=document.getElementsByTagName("ol").item(0);
+var oLis=document.getElementsByTagName("li");
+var oLi=document.getElementsByTagName("li").item(0);
+oLi.nextElementSibling;//保存的是下一个元素弟弟的引用
+oLi.previousElementSibling;//保存的是上一个元素弟弟的引用
+
+</script>

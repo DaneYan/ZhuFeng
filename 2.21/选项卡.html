@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选项卡</title>
+		<style type="text/css">
+			/**{margin: 0px;padding: 0;}*/
+			#tab{
+				width: 300px;
+				height: 30px;
+				margin: 10px auto 0;
+				background: lightblue;
+				list-style: none;
+				padding: 0;
+				text-align: center;
+			}
+			#tab li{
+				width: 60px;
+				height: 30px;
+				line-height: 30px;
+				float: left;
+				background: lawngreen;
+			}
+			div{
+				width: 300px;
+				height: 200px;
+				line-height: 200px;
+				background: lightsalmon;
+				margin: 0px auto;
+				display: none;
+				text-align: center;
+			}
+			#tab li.selectedLi{
+				background: lightpink;
+				
+			}
+			div.selectedDiv{
+				display: block;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul id="tab">
+			<li onclick="changeTab(0)">1</li>
+			<li onclick="changeTab(1)" class="selectedLi">2</li>
+			<li onclick="changeTab(2)">3</li>
+			<li onclick="changeTab(3)">4</li>
+			<li onclick="changeTab(4)">5</li>
+		</ul>
+		<div>1</div>
+		<div class="selectedDiv">2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		
+		
+		<script type="text/javascript">
+			var oLi = document.getElementById("tab").getElementsByTagName("li");
+			var oDiv = document.getElementsByTagName("div");
+			function changeTab(n){
+				for (var i=0;i<oLi.length;i++) {
+					oLi[i].className="";
+					oDiv[i].className="";
+				}
+				oLi[n].className="selectedLi";
+				oDiv[n].className="selectedDiv";
+			}
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+		
+		//两个== 与一个 = 号不要因为复制语句而忘了检查，注意==与= 的区别
+			var a = [21,3,5,4,3,3,3,3,5,5,5,63,2,532,43,3,2];
+			obj = {};
+			for(var i = 0;i<a.length;i++){
+				if(obj[a[i]] == a[i]){
+					a.splice(i,1);
+					i--;
+				}
+				obj[a[i]] = a[i];
+			}
+			
+			console.log(a);
+		</script>
+	</body>
+</html>

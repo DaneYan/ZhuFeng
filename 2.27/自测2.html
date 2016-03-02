@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #div1{
+            height: 230px;
+            width: 200px;
+            margin: 0 auto;
+            background-color:;
+        }
+        #tab{
+            width: 200px;
+            height: 30px;
+        }
+        #tab li{
+            width:50px ;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #ff0033;
+            float: left;
+            list-style: none;
+        }
+        #div1 div{
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: aqua;
+            display: none;
+        }
+        #tab li.show{
+            background-color: aqua;
+        }
+        #div1 div.showDiv{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    <ul id="tab">
+        <li class="show">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div class="showDiv">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+
+<script type="text/javascript">
+    //    小示例1：基本的选项卡面板能够熟练写下来
+    //    小示例2：九九乘法表
+    //    小示例3：表格的隔行变行（比如说一共100行，第一行红，第二行蓝，第三行绿，第四行粉，
+    //    第五行黄，以下按这个规律每五行交替一次）
+
+//    var arr = [1,2,1,1,1,1,4,5,6,4,5,3453,546,234,5,6,7455,6754,32,54];
+    //    小示例4：冒泡排序和去重 (附加题，可以不考)
+    //    小示例5：验证码（附加题，可以不考）
+    //    小示例6：时间自动走（附加题，可以不考）
+    //    小示例7：任意数求和（附加题，可以不考）
+    //         8: 插入排序
+    //         9:快速排序
+
+
+
+
+    //    小示例1：基本的选项卡面板能够熟练写下来
+    var oLi = document.getElementById("tab").getElementsByTagName("li");
+    var oDiv = document.getElementById("div1").getElementsByTagName("div");
+    function changeTab(a){
+        for(var i = 0;i<oLi.length;i++){
+            oLi[i].className = "";
+            oDiv[i].className = "";
+        }
+        oLi[a].className = "show";
+        oDiv[a].className = "showDiv";
+    }
+    for(var i = 0;i<oLi.length;i++){
+        oLi[i].num = i;
+        oLi[i].onclick = function(){
+            changeTab(this.num);
+        }
+    }
+
+    //冒泡排序、去重（两种方法）、插入排序、快速排序
+    function maopao(arr){
+        for(var outer = 0;outer<arr.length;outer++){
+            for(var inner = 0;inner<arr.length;inner++){
+                if(arr[inner] > arr[inner+1]){
+                    var temp = arr[inner];
+                    arr[inner] = arr[inner+1];
+                    arr[inner+1] = temp;
+                }
+            }
+        }
+    }
+    var arr = [1,2,1,1,1,1,4,5,6,4,5,3453,546,234,5,6,7455,6754,32,54];
+//    maopao(arr);
+//    alert(arr);
+    function quchong1(arr){
+        for(var outer = 0;outer<arr.length;outer++){
+            for(var inner = outer+1;inner<arr.length;inner++){
+                if(arr[outer] == arr[inner]){
+                    arr.splice(inner,1);
+                    inner--;
+                }
+            }
+        }
+    }
+    quchong1(arr);
+    alert(arr);
+    function quchong2(){
+
+    }
+    function charu(){
+
+    }
+    function  kuaisu(){
+
+    }
+</script>
+</body>
+</html>

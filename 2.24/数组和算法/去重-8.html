@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+var a1=[];
+for(var i=0;i<10000;i++){
+	//如果想把这个数组中重复的机率增大，则把下边的10000，改成5000
+	a1.push(Math.floor(Math.random()*7000));
+}
+var ary=a1.slice(0);
+//var a1=[3,5,3,3,9,5,5,4,3,2,1,3,5,5,9,0];
+//i=0;
+//var n=a[0];//3
+//和第二个数起的后续的数分别比较
+//j=i+1;
+//3==5,3==3{索引2删除;j--,下次再比较索引2}
+var beginTime=new Date;
+var obj={};
+for(var i=0;i<a1.length;i++){
+	if(a1[i]==obj[a1[i]]){
+		a1.splice(i,1);
+		i--;
+		continue;
+	}
+		obj[a1[i]]=a1[i];
+}
+var endTime=new Date;
+console.log(endTime-beginTime)
+console.log(a1);
+
+//var ary=[3,5,3,3,9,5,5,4,3,2,1,3,5,5,9,0];
+beginTime=new Date;
+for(var i=0;i<ary.length-1;i++)
+	for(j=i+1;j<ary.length;j++)
+		if(ary[i]==ary[j])
+			ary.splice(j--,1);
+
+endTime=new Date;
+console.log(endTime-beginTime);
+console.log(ary)
+</script>

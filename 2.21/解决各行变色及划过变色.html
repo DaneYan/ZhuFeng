@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>各行变色及划过变色</title>
+		<style type="text/css">
+			#ul1 li{
+					width: 200px;
+					height: 30px;
+					line-height: 30px;
+					background-color: lawngreen;
+					list-style: none;
+					margin-top: 10px;
+					padding-left: 20px;
+				}
+			#ul1 .bg1{
+				background-color: lightblue;
+			}
+			#ul1 .bg2{
+				background-color: lightcoral;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		
+		
+		<script type="text/javascript">
+			var oLi = document.getElementById("ul1").getElementsByTagName("li");
+			//alert(li.length);
+			for(var i=0;i<oLi.length;i++){
+				if (i%2==0){
+					oLi[i].className = "bg1";
+				}else{
+					oLi.item(i).className = "";
+				}
+				
+				oLi[i].bg = oLi[i].className;
+				
+				oLi[i].onmouseover = function(){
+					this.className = "bg2";
+				};				
+				oLi[i].onmouseout = function(){
+					this.className = this.bg;
+				};
+			}
+		</script>
+	</body>
+</html>

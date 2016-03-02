@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+#ul1 li{ height:20px; width:100px; overflow:hidden; background:green; margin:10px; position:relative;}
+</style>
+</head>
+
+<body>
+<ul id="ul1">
+	<li>11111111</li>
+    <li>22222222</li>
+    <li>33333333</li>
+    <li>444444444</li>
+    <li>55555555</li>
+</ul>
+</body>
+</html>
+<script>
+var oLis=document.getElementById("ul1").getElementsByTagName("li");
+for(var i=0;i<oLis.length;i++){
+	/*
+	;(function(i){
+	window.setTimeout(function(){oLis.item(i).style.left=(i+1)*100+"px";},(i+1)*1000);
+	})(i);
+	*/
+	window.setTimeout((function(i){
+		return function (){oLis.item(i).style.left=(i+1)*100+"px"}
+		})(i),(i+1)*1000);
+}
+
+var d=new Date;
+for(var i=0;i<100000;i++){
+	
+}
+alert(new Date-d);
+</script>

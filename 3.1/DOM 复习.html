@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var div = document.createElement("div");
+    div.innerHTML = "div1";
+    document.body.appendChild(div);
+    var div2 = div.cloneNode();
+    div2.innerHTML = "kelongde ";
+    document.body.insertBefore(div2,div);
+
+
+
+//    var a = [];
+//    var b = Number(a.toString());
+//    alert(b);
+//    alert(b == false);
+
+    var arr = [1,2,3,4];
+    function fn(arr){
+        arr[0] = 0;
+        arr = 0;
+        arr[0] = 100;
+        return arr;
+
+    }
+    var b = fn(arr);
+//    alert(arr);
+//    alert(b);
+
+    function fn1(a,b,c,d){
+        a = 10;
+        b = 11;
+        c = 12;
+        d = 13;
+        for(var i =0;i<=arguments.length;i++){
+            console.log(arguments[i]);
+        }
+    }
+    fn1(1,2,3,4);
+</script>
+
+</body>
+</html>

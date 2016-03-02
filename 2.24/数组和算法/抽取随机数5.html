@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+//50万项的数据，随机抽取1000项
+var a=[];
+for(var i=0;i<100;i++){
+	a.push(i);	
+}
+var aNew=[];
+for(var i=0;i<10;i++){
+	//aNew.concat(a.splice(Math.floor(Math.random()*100),1));
+	//var random=Math.floor(Math.random()*100);
+	var random=Math.floor(Math.random()*a.length);//随生成索引
+	aNew=aNew.concat(a.splice(random,1));//根据这个索引把这个数从原数组抽出来
+	//aNew.push(a.splice(random,1));//用push会使aNew是二维数组
+	//aNew.push(a.splice(random,1)[0]);//这样可以，但没有上边的简捷
+	
+}
+
+a //100 50万  10
+//下面是第二种方法
+var a2=[];
+for(var i=0;i<10;i++){
+	var random=Math.floor(Math.random()*a.length);
+	//var item=a.splice(random,1)[0];
+	//	
+	//a2.push(item);
+	//a2=a2.concat(a.splice(Math.floor(Math.random()*a.length),1))
+	//以上是原来的方式
+	
+	//var item=a[random];
+	a2.push(a[random]);//先把抽到的这一项保存下来
+	a[random]=a[a.length-1];//用最后一项把已经出栈的那一项覆盖
+	a.length--;//再让数组的长度减小一个，这样就达到了删除数组最后一项的效果
+	//a2.push(item);
+	
+}
+
+var a=[];
+alert(a[100])
+//undefind是从null派生而来  标识量型
+//在JS中，凡是读取一个对象不存在的属性的值，得到的都是undefined，不会报错
+document
+
+	
+
+</script>

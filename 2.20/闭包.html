@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<div id="">
+			这个会被覆盖吗？
+		</div>
+		<script type="text/javascript">
+			document.write("不会覆盖你的 ");
+			var fn = function(){
+				alert("据说方法（函数）不起名会报错，但赋给变量就不会");
+			}
+			
+			var a=99;
+			var b=100;//有两个全局变量a和b
+			;(function(a,b){
+				//这里面定义的a,b,c变量，是在这个封闭的环境里，不会和外面的变量冲突。
+				//这是个安全的块级作用域
+				var c=a+b;
+				alert(c);
+			})(4,5);
+		</script>
+	</body>
+</html>

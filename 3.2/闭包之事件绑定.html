@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        #ul1 li{
+            list-style: none;
+            margin: 10px;
+            width: 100px;
+            height: 30px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+<script>
+    var oLi = document.getElementById("ul1").getElementsByTagName("li");
+    function fn(arr){
+        for(var i = 0;i<arr.length;i++){
+            arr[i].onclick = (function(n){
+                return function (){
+                    alert(n+1);
+                }
+            })(i);
+        }
+    }
+    fn(oLi);
+    function fn1(arr){
+        for(var i = 0;i<arr.length;i++){
+            arr[i].style.position = "absolute";
+            arr[i].style.left =
+        }
+    }
+
+
+    /*var fn1 = function(){
+        alert("asdf");
+    }*/
+    //alert(fn1());//会弹出两个框，第一个是asdf，第二个是undefined
+
+</script>
+
+</body>
+</html>

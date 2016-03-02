@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>如果一个对象的属性根本就没定义过，则它是undefined；
+			<br />
+			如果是null，则表示这是个本来就有的属性，只是没有值。
+			<br />
+			对于值也是这样
+		</p>
+		<div id="div1" style="background: lawngreen;width: 10px;height: 100px;">
+			
+		</div>
+			<script type="text/javascript">
+//				var c = new Object();
+//					c.a = null;
+//				alert(c.a);
+//				var b = new Object();
+//				alert( typeof b );
+//				var a = Number(NaN==NaN);
+//				alert(a);
+//				b = "12.5px"
+//				a = parseInt(b,10);
+//				alert(a);
+//				var a = 5.414;
+//				var b = 8.89;
+//				var c = Math.ceil(a);
+//				var d = Math.ceil(b);
+//				var e = Math.floor(a);
+//				var f = Math.floor(b);
+//				var g = Math.round(a);
+//				var h = Math.round(b);
+//				
+//				alert(c+"-"+d+"-"+e+"-"+f+"-"+g+"-"+h);
+//				var a = new Object();
+//				a.attre = 1234;
+//				alert(a["a"+"t"+"tre"]);
+//				var a =(); 错语句
+//				var a =//; 错语句
+//				if((false)){
+//					alert("true");
+//				}else{
+//					alert("false");
+//				}
+//				var a = undefined;
+//				alert( typeof a);
+//				var a = {};
+//				alert(a instanceof Object);//true\
+				var a = document.getElementById("div1");
+				//a.style.width = "500px";
+				
+				var b = document.getElementById("div1").style;
+				//b.width = "500px";
+				var c = document.getElementById("div1").style.width = "300px";
+				//c = "300px";
+				alert(typeof document.getElementById('div1').style.width);
+				
+				
+			</script>
+	</body>
+</html>

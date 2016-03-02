@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var n = 9;
+    var s="abcd";
+    var f="window-f";
+    function fn(){
+        alert(n);//undefined
+        alert(s);
+        alert(f);//undefined
+        n = 7;
+        var n = 6;
+        var f = "fn-f";
+        function inner(){
+            alert(n);
+            alert(s);
+            alert(f);//undefined
+            alert(x);//报错
+            var f = "f";
+        }
+        inner();
+    }
+    fn();
+//    alert(b);
+//    var b = 10;
+//    function b(){
+//        return 123;
+//    }
+</script>
+
+</body>
+</html>

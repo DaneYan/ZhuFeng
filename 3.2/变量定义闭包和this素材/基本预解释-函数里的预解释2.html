@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script type="text/ecmascript">
+
+var n=9;
+var s="abcd";
+var f="window-f";
+function fn(){
+	alert(n);
+	alert(s);
+	n=7;
+	var n=6;
+	var f="fn-f";
+	function inner(){
+		alert(n);
+		alert(s);
+		alert(f);
+		alert(x);
+		var f="f";
+		function inner(){}
+		
+	}
+	inner();
+	return inner;
+};
+var fnOuter=fn();//运行这个函数，会输出什么结果?
+fnOuter();
+</script>

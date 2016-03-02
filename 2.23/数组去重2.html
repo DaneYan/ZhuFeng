@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>对象法数组去重</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var ary = [1,2,2,4,4,5,5,6,6,6,7,8,9];
+			//var ary = [3,5,5,8,33,44,55,33];
+			var obj = {};
+			for (var i = 0;i<ary.length;i++) {
+				if(obj[ary[i]]==ary[i]){
+					ary.splice(i,1);
+					i--;
+					continue;
+				}
+				obj[ary[i]] = ary[i];
+			}
+			console.log(ary);
+		</script>
+	</body>
+</html>

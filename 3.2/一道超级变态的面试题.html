@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    //var f = function(){return true};
+    var g = function(){return false};
+    (function(){
+        if(g()&&[]==![]){//g()不是全局的
+            //alert(f);
+            f = function (){return true};
+            function g(){return true};
+
+        }
+    })();
+    alert(f());
+    alert(g());
+</script>
+
+</body>
+</html>

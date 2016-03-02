@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>
+<script>
+var ele=document.getElementById("div1");
+/*
+ele.style.width="100px";
+ele.style.height="200px";
+ele.style.background="red";
+*/
+var height="400";
+with(ele.style){
+	width="100px";
+	height="200px";
+	backgroundColor="green";
+	window.height;
+	var nnn=99;
+}
+
+function fn(){var n=99;}
+fn();
+fn();
+fn();
+
+alert(fn.n);
+</script>
+
+
+
+

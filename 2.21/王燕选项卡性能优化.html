@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #tab{
+            width: 500px;
+            margin: 50px auto 0;
+
+        }
+        #tab ul{
+            text-align: center;
+            list-style: none;
+        }
+        #tab ul li{
+            width: 80px;
+            text-align: center;
+            display: inline-block;
+            line-height: 30px;
+            height: 30px;
+            background: pink;
+        }
+        #tab div{
+            height: 300px;
+            display: none;
+        }
+        #tab ul li.selectLi{
+            background: palegreen;
+        }
+        #tab div.selectDiv{
+            background: palegreen;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li  class="selectLi">选项卡一</li>
+        <li >选项卡二</li>
+        <li >选项卡三</li>
+        <li>选项卡四</li>
+    </ul>
+    <div  class="selectDiv">内容一</div>
+    <div >内容二</div>
+    <div >内容三</div>
+    <div>内容四</div>
+</div>
+</body>
+</html>
+<script>
+    //js动态的控制当前点击的li的类名是selectLi,相对应的div的类名是selectDiv
+    //原始的状态,所有li和所有的div都没有类名 (className="");
+
+    var oTab = document.getElementById("tab");
+    var oLis = oTab.getElementsByTagName("li");
+    var oDivs = oTab.getElementsByTagName("div");
+    var preIndex = 0;
+    function changeTab(n){
+        //把上一次选中的状态给清楚掉
+        oLis[preIndex].className = "";
+        oDivs[preIndex].className = "";
+        //为当前点击的元素和相对应的div设置选中状态
+        oLis[n].className = "selectLi";
+        oDivs[n].className  = "selectDiv";
+        preIndex = n;//点击完之后把当前选中的索引赋给preIndex
+    }
+
+//    oLis[0].onclick = function(){
+//        changeTab(0)
+//    }
+//    oLis[1].onclick = function(){
+//        changeTab(1)
+//    }
+//    oLis[2].onclick = function(){
+//        changeTab(2)
+//    }
+//    oLis[3].onclick = function(){
+//        changeTab(3)
+//    }
+
+    for(var i = 0;i<oLis.length;i++){
+        //console.log(typeof  oLis[i]);
+        oLis[i].zhufeng = i;//把每个li的索引保存在自定义属性zhufeng上
+        oLis[i].onclick = function(){
+            //this表示当前点击的li标签
+            changeTab(this.zhufeng);//把当前li的索引传进去,这样我们才能知道当前你点击的元素是哪个
+        }
+    }
+</script>

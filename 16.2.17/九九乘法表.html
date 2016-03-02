@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title> new title </title>
+		
+		<meta name="generator" content="editplus" />
+		<meta name="author" content="" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+  
+		<style type="text/css">
+			*{margin:0px;padding:0px;}
+			span{width:70px;height:20px;border:1px red solid;display:block;float:left;margin-left:10px;line-height:20px;text-align:center;}
+
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<span>1</span><span>2</span><span>3</span>
+		</div>
+
+
+
+		<script type="text/javascript">
+			var oCon=document.getElementById("container");
+			var txt="";
+			for(var i=1;i<10;i++){//行  前列后行
+
+				for(var j=1;j<=i;j++){//lie
+					txt += "<span>"+j+"*"+i+"="+i*j+"</span>"
+					
+				}
+				txt+="<br /><br />"
+				oCon.innerHTML=txt;
+			}
+			
+			/*var a = document.getElementByTagName("span");
+			var txt="";
+			for(var i=1;i<10;i++){
+				for(var j=1;j<10;j++){
+					txt += i+"*"+j+"="+i*j;
+
+				}
+				txt += "<br />";
+			}
+			a.innerHTML=txt;*/
+		</script>
+	</body>
+</html>

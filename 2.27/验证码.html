@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    //验证码5-62
+
+    //alert(random);
+    function shengchengsuijishu() {
+        var arr = [];
+        for (var i = 0;i<4;i++) {
+            var random = Math.floor(Math.random()*57+5);
+            if (arr.indexOf(random) == -1) {
+                arr.push(random);
+                continue;
+            }
+            i--;
+        }
+         return arr;
+    }
+    var arr = shengchengsuijishu();
+    alert(arr);
+</script>
+
+</body>
+</html>

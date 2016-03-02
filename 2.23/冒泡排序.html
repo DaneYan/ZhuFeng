@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			var ary = [99,88,55,77,3,44,5,1,23];
+			function maoPao(ary){
+				for (var i =0;i<ary.length;i++) {
+					for (var j = 0;j<ary.length-i;j++) {
+						if(ary[j]>ary[j+1]){
+//							temp = ary[j];
+//							ary[j] = ary[j+1];
+//							ary[j+1] = temp;
+							swap(j,ary);
+						
+						}
+					
+					}
+
+				}
+			}
+			
+			function swap(x,ary){
+				var temp = null;				
+				temp = ary[x];
+				ary[x] = ary[x+1];
+				ary[x+1] = temp;
+			}
+
+			
+			
+		</script>
+	</body>
+</html>

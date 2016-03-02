@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<ol>
+	<h3>数组应用和基本算法</h3>
+    <li>数组的本质是有序存值的对象</li>
+    <li>复习数组方法</li>
+    <li>判断字符串是否是回文</li>
+    <p>
+    	比如:"abcba","1234567654321"<br>
+    
+    有没有其它方法:str.split("").reverse().join();
+    </p>
+
+	<li>如何自动生成一个10000项的无序的数组(不可以有重复)</li>
+    <li>如何自动生成一个10000项的无序的数组(可以有重复)</li>
+    <li>在一个有n项值的数组里,随机取出m个值,要求最优算法</li>
+    <li>数组的缺点和链表(双向链表)</li>
+    
+    
+    <li>复习数据去除重复项,两种不同方式,那种速度更快</li>
+    <li>如何测试代码性能</li>
+    <li>复习冒泡排序</li>
+    <li>如何知道JS数组中的sort方法用的是什么排序(实现原理)</li>
+    <li>插入排序 </li>
+    
+    <li>什么叫递归--在方法里返回方法本身的运算</li>
+    <li>求任意数的阶乘--递归方式</li>
+    <li>求任意数的阶乘--非递归方式</li>
+    <li>二分(快速排序)排序</li>
+    <li>递归危害--栈内存溢出问题(JS中是由于作用域积累造成)</li>
+    
+    <li>数组中的其它遍历方法应用及实现:forEach,every,filter等</li>
+    
+    <li>会涉及到的知识点:面向对象的prototype,this关键字等</li>
+    <li>文件中附部分代码</li>
+    
+
+</ol>
+参考网址:http://www.zhufengpeixun.cn/jishuziliao/javaScriptzhuanti/2011-08-05/134.html
+</body>
+</html>
+<script>
+//判断是否是回文
+function isPalindrome(word) {
+        var s = new Stack();
+        for (var i = 0; i < word.length; ++i) {
+           s.push(word[i]);
+        }
+        var rword = "";
+        while (s.length() > 0) {
+           rword += s.pop();
+        }
+        if (word == rword) {
+           return true;
+		}else {
+           return false;
+        }
+}
+
+
+//插入排序
+function insertionSort() {
+        var temp, inner;
+        for (var outer = 1; outer <= this.dataStore.length - 1; ++outer) {
+           temp = this.dataStore[outer];
+           inner = outer;
+           while (inner > 0 && (this.dataStore[inner - 1] >= temp)) {
+              this.dataStore[inner] = this.dataStore[inner - 1];
+				--inner; 
+			}
+           this.dataStore[inner] = temp;
+        }
+}
+//快速排序
+function qSort(arr){
+         if (arr.length == 0) {
+             return [];
+         }
+         var left = [];
+         var right = [];
+         var pivot = arr[0];
+         for (var i = 1; i < arr.length; i++) {
+		if (arr[i] < pivot) {
+                left.push(arr[i]);
+             } else {
+                right.push(arr[i]);
+             }
+		}
+         return qSort(left).concat(pivot, qSort(right));
+}
+</script>
+
+周啸天，张亚涛，郭永峰，黄江涛，林静，李晓 T5
+
+
+汝等比丘，知我说法，如筏喻者；法尚应舍，何况非法
+
+
+var oTable=document.getElementsByTagName("table").item(0).tBodies[0].rows[x].cells[y].style.backgroundColor

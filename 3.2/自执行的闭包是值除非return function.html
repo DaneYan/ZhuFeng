@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+     var fn = (function (){
+        a = 1;
+        return function(){alert("qwer")};
+    })();
+    //var b = fn();//当return 一个值的时候fn不是方法，所以fn()会出错
+     fn();
+     alert(fn);
+     alert(a);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title> new title </title>
+		
+		<meta name="generator" content="editplus" />
+		<meta name="author" content="" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+  
+		<style type="text/css">
+			*{margin:0px;padding:0px;}
+			#div1{width:200px;height:200px;background:red;}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+
+
+
+		<script type="text/javascript">
+			function fn1(){
+				this.style.background="black"
+				//return e.style.background="black";
+			}
+			function fn2(){
+				this.style.background="red"
+			}
+			var div1 = document.getElementById("div1");
+			div1.onmouseover=fn1;
+			div1.onmouseout=fn2;
+
+			//不同类型比较会发生自动类型转换，转换后进行比较
+		</script>
+
+		
+	</body>
+</html>

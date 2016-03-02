@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>验证码</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+		
+		//产生随机数
+		function fnYanZhengMa(){
+			var ary = [];
+			
+			for(var i =0;i<4;i++){
+				var random = Math.round(Math.random()*60+2);
+				if(ary.indexOf(random) == -1){
+					ary[i] = random;
+					continue;
+				}
+				i--;
+			}
+			return ary;
+		}
+		
+		console.log(fnYanZhengMa());
+		</script>
+	</body>
+</html>

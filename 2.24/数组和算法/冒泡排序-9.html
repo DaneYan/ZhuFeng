@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+var a=[7,3,9,6,4,2,11,5,8,0,3];
+//两个值如何交换位置
+//内循环的循环边界是多少
+
+/*var a=9;
+var b=7;
+var temp=a;
+a=b;
+b=temp;
+var j=0;	j<a.length-1-i;//
+a[j]>a[j+1]*/
+
+function bubbleSort(a){
+	for(var i=0;i<a.length-1;i++){
+		for(var j=0;j<a.length-1-i;j++){
+			if(a[j]>a[j+1]){
+				var temp=a[j];	
+				a[j]=a[j+1];
+				a[j+1]=temp;
+			}
+		}
+	}
+	console.log(a);
+}
+
+bubbleSort(a);
+</script>
