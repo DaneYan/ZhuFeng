@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function fn(){
+        var num = 10;
+        return function(){
+            num++;
+            console.log(num);
+        }
+    }
+
+    //fn()()运行一遍释放一遍
+    console.log(fn()());
+    console.log(fn()());
+    console.log(fn()());
+
+
+
+    function fn(){
+        var num = 10;
+        return function(){
+            num++;
+            console.log(num);
+        }
+    }
+
+    //fn()内部的内容被f占用 故不释放fn()
+    var f = fn();
+    console.log(f());//11//直接运行return的内容但调用fn()里的数据
+    console.log(f());//12
+    console.log(f());//13
+    console.log(fn()());//先运行fn()之后运行return的内容
+    //释放
+    f =null;
+</script>
+
+</body>
+</html>

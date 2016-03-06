@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    /*var arr = [1,2,1,1,1,1,4,5,6,4,5,3453,546,234,5,6,7455,6754,32,54];
+    function maoPao(arr) {
+        for (var outer = 0; outer <arr.length-1;outer++) {
+            for(var inner = 0;inner <arr.length-1;inner++){
+                if(arr[inner]>arr[inner+1]){
+                    swap(inner,arr);
+                }
+            }
+        }
+    }
+
+    function swap(a,arr){
+        arr[a] = arr[a] + arr[a+1];
+        arr[a+1] = arr[a] - arr[a+1];
+        arr[a] = arr[a] - arr[a+1];
+    }*/
+
+    var arr = [1,2,1,1,1,1,4,5,6,4,5,3453,546,234,5,6,7455,6754,32,54];
+    function maoPao(arr) {
+        for (var outer = 0; outer <arr.length-1;outer++) {
+            for(var inner = 0;inner <arr.length-1;inner++){
+                if(arr[inner]>arr[inner+1]){
+                    swap(inner,arr);
+                }
+            }
+        }
+    }
+//将swap改写成值传递，不用引用传递
+    function swap(a,arr){
+        arr[a] = arr[a] + arr[a+1];
+        arr[a+1] = arr[a] - arr[a+1];
+        arr[a] = arr[a] - arr[a+1];
+    }
+</script>
+
+</body>
+</html>

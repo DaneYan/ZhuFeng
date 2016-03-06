@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var name = "window";
+    function fn(){
+        var name = "fn";
+        var obj ={
+            name: "obj",
+            fn :(function(){
+                console.log(name);
+            })()
+
+        }
+    }
+    fn();//fn
+
+
+
+   var name = "window";
+    function fn(){
+        var name = "fn";
+        var obj ={
+            name: "obj",
+            fn :(function(name){
+                console.log(name);
+            })(name)
+
+        }
+    }
+    fn();//fn
+
+
+    var name = "window";
+    function fn(){
+        var name = "fn";
+        var obj ={
+            name: "obj",
+            fn :(function(){
+                console.log(this.name);
+            })()
+
+        }
+    }
+    fn();//window
+
+
+    var name = "window";
+     function fn(){
+     var name = "fn";
+     var obj ={
+     name: "obj",
+     fn :(function(name){
+     console.log(name);
+     })(this.name)
+
+     }
+     }
+     fn();//window
+    var name = "window";
+    function fn(){
+        var name = "fn";
+        var obj ={
+            name: "obj",
+            fn :(function(){
+                console.log(name);
+            })(this.name)
+
+        }
+    }
+    fn();//fn
+</script>
+
+</body>
+</html>

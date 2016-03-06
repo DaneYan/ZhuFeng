@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
-        *{
+        * {
             padding: 0px;
             margin: 0px;
         }
-        #ul1 li{
+
+        #ul1 li {
             list-style: none;
             margin: 10px;
             width: 100px;
@@ -27,30 +28,55 @@
 </ul>
 
 <script>
-    var oLi = document.getElementById("ul1").getElementsByTagName("li");
-    function fn(arr){
-        for(var i = 0;i<arr.length;i++){
-            arr[i].onclick = (function(n){
-                return function (){
-                    alert(n+1);
+    /*var oLi = document.getElementById("ul1").getElementsByTagName("li");
+    function fn(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            arr[i].onclick = (function (n) {
+                return function () {
+                    alert(n + 1);
                 }
             })(i);
         }
     }
     fn(oLi);
-    function fn1(arr){
-        for(var i = 0;i<arr.length;i++){
+    function fn1(arr) {
+        for (var i = 0; i < arr.length; i++) {
             arr[i].style.position = "absolute";
-            arr[i].style.left =
+            window.setTimeout(function () {
+                //return function () {
+                    arr[i].style.left = i * 110 + "px";
+                    arr[i].style.top = i * 40 + "px";
+               // };
+            }, (i + 1) * 1000);
         }
     }
 
+    fn1(oLi);
 
-    /*var fn1 = function(){
-        alert("asdf");
-    }*/
+    ;(function(){
+        return function (){
+
+        }
+    })();
+    /!*var fn1 = function(){
+     alert("asdf");
+     }*!/
     //alert(fn1());//会弹出两个框，第一个是asdf，第二个是undefined
 
+
+*/
+
+    function func(){
+        alert("func");
+    }
+    function fn(i){
+        alert(i);
+        function fu(){alert("fn"+i)};
+    }
+    //func(fn(75));
+    window.setTimeout(undefined,3000);
+    /*window.setTimeout(function(){return fn(69)},3000);
+    alert(70);*/
 </script>
 
 </body>
