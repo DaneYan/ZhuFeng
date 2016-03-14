@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div id="content">
+        sdofjoi
+        dsgg
+        123
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+//1、关于正则中的g
+
+
+   /* //exec 如果有g则不重复查找
+
+    var reg = /ab/g;
+    //console.dir(reg);
+    var str1 = "cd12abcdabcd";
+    var str2 = "ab1234";
+    console.log(reg.exec(str1));
+    //console.dir(reg);
+    console.log(reg.exec(str1));
+    //console.dir(reg);
+    console.log(reg.exec(str1));*/
+
+
+   //lastIndex 指下一次查找的索引，有g表示不更新lastIndex为0
+   //因为 reg为引用数据类型
+   /* var reg = /ab/g;
+    //console.dir(reg);
+    var str1 = "cd12abcdabcd";
+
+    console.log(reg.test(str1));
+    console.dir(reg);
+    console.log(reg.test(str1));
+    console.dir(reg);
+    console.log(reg.test(str1));
+    console.dir(reg);*/
+
+
+   //2、正则中的括号---分组 后赋给RegExp.$1,RegExp.$2...
+
+    /*var reg = /(\d)(\d)(\d)/;
+    var str = "399";
+    reg.test(str);
+
+    console.log(RegExp.$1);*/
+
+
+    //3、?号的用法：1、0或一次  量词元字符2、非贪婪匹配即放在其他量词元字符后则往少了匹配3、(?: )匹配不捕获
+
+
+    //4、匹配所有字符
+    /*var reg = /[\w\W]+/;
+    var str = "12efvdfg2";
+
+    console.log(reg.exec(str));*/
+
+
+    //5、引用----\1  \2
+    var innerHtml = document.body.innerHTML;
+    //alert(innerHtml);
+    var reg1 = /<div +id=('content'|"content") *>([\w\W]+?)<\/div>/;
+    var reg2 = /<div +id=(['"])content\1 *>([\w\W]+?)<\/div>/;  // \1指引用第一个()
+    reg1.exec(innerHtml);
+    //alert(RegExp.$2);
+    console.log(RegExp.$1,RegExp.$2);
+
+
+    //6、replace 语法stringObject.replace(正则,字符串);
+    //用字符串替换正则
+
+
+    var str9 = "abc";
+    //alert(str9.replace(/(\w)(\w)(\w)/,"$3$2$1"));
+
+
+
+    //7、所有值类型的方法不会影响原值
+    //例1--电话号--（思考怎么加上单位）
+    //1、零的问题 即没有零千
+    //2、变成switch 用%
+    var str8 = "15210101794";
+    str8 = str8.replace(/\d/g,myReplace);
+
+function myReplace(){
+    var str8 = "零壹贰叁肆伍陆柒捌玖";
+    var weizhi = arguments[2].length-arguments[1]-1;
+    if(weizhi==1) {
+        return str8.charAt(arguments[0])+"十";
+    }else if(weizhi==2){
+        return str8.charAt(arguments[0])+"百";
+    }else if(weizhi==3){
+        return str8.charAt(arguments[0])+"千";
+    }else if(weizhi==4){
+        return str8.charAt(arguments[0])+"万";
+    }else if(weizhi==5){
+        return str8.charAt(arguments[0])+"十";
+    }else if(weizhi==6){
+        return str8.charAt(arguments[0])+"百";
+    }else if(weizhi==7){
+        return str8.charAt(arguments[0])+"千";
+    }else if(weizhi==8){
+        return str8.charAt(arguments[0])+"万";
+    }else if(weizhi==9){
+        return str8.charAt(arguments[0])+"亿";
+    }else if(weizhi==10){
+        return str8.charAt(arguments[0])+"十";
+    }else if(weizhi==11){
+        return str8.charAt(arguments[0])+"百";
+    }else if(weizhi==12){
+        return str8.charAt(arguments[0])+"千";
+    }
+    return str8.charAt(arguments[0]);
+}
+    console.log(str8);
+
+
+    //8、replace
+
+//replace会往里传三个或多个参数第一个是匹配的字符，第二个是匹配字符的索引，第三个是this即replace的宿主，而当正则中出现分组()时则会把$1传到第一个参数后面，$2接着传
+    var str7 = "123ab234sd244gf";
+    str7 = str7.replace(/(\d)(\d)(\d)/g,function(){
+        return -(-arguments[1]-arguments[2]-arguments[3])
+    });
+    console.log(str7);
+
+</script>
+
+</body>
+</html>

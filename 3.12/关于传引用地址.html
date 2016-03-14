@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var arr = [1,2,3];
+    function fn(arr){
+        arr[0] = 100;//指向同一个数组
+        console.log(arr);
+        arr = [];//将函数内部arr的指向改到一个新的数组，所以接下来的操作不是对全局的arr的操作
+        arr[0] = 300;
+        console.log(arr);
+
+    }
+    fn(arr);
+    console.log(arr);
+</script>
+
+</body>
+</html>

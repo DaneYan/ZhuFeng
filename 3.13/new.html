@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding:0;
+            list-style: none;
+        }
+        ul{
+            width: 200px;
+
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
+            margin: 0 auto;
+        }
+        li{
+            margin: 10px;
+            cursor: pointer;
+        }
+        li:hover{
+            background-color: #66ff00;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script type="text/javascript">
+    var json1 = [{"title":"qwqertyuioplkjhgfdsa","context":"asdfghjklzxcvbnm"},{"title":"qwqertyghsrbjhgfdsa","context":"ewrerlzxcvbnm"},{"title":"qwqertyfgnjhgfdsa","context":"asdfghxbdarwgvbnm"},{"title":"qwqertyuioplkjhgfdsa","context":"asdfghjklzxcvbnm"},{"title":"qwqertyghsrbjhgfdsa","context":"ewrerlzxcvbnm"},{"title":"qwqertyfgnjhgfdsa","context":"asdfghxbdarwgvbnm"}];
+    var str = "";
+    for(var i = 0;i<json1.length;i++){
+        str += "<li>"+json1[i].title+"</li>";
+    }
+
+    str += document.getElementsByTagName("ul")[0].innerHTML;
+    //document.getElementsByTagName("ul")[0].innerHTML = str;
+    var frg = document.createDocumentFragment();
+    /*console.dir(document.documentElement);
+    console.dir(document);
+    console.dir(document.body);*/
+
+    var arr = utils.beArray(json1);
+    for(var i = 0;i<arr.length;i++){
+
+    }
+
+
+</script>
+</body>
+</html>

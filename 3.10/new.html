@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //1、call与apply
+    //call与apply均为对当前方法的执行即例：fn.call(),fn.apply()
+    //且这两个函数的第一个参数均为当前函数的this即改变this的指向为call的第一个参数，若无或为null、undefined则this为window
+    //若obj.fn.call()this是?
+    function myMax(ary) {
+        var max = ary[0];
+        for (var a in ary) {
+            if (max < a) {
+                max = a;
+            }
+        }
+        return max;
+    }
+    Math.max.apply(null,[]);
+
+
+    function fn1(){
+        console.log(1);
+        console.log(this);
+    }
+    function fn2(){
+        console.log(2);
+        console.log(this);
+    }
+
+    var fn3 = fn1.call;
+    fn3.call(fn2);
+
+
+    function avgFn(){
+        var max = arguments[0];
+        var min = arguments[0];
+        for(var a in arguments){
+            max = max<arguments[a]?arguments[a]:max;
+            min = min>arguments[a]?arguments[a]:min;
+        }
+        var sum = 0;
+        for(var b in arguments){
+            sum+=arguments[b];
+        }
+        var result = (sum-max-min)/(arguments.length-2);
+        console.dir(arguments);
+        return result;
+    }
+    (avgFn(12,3,2,434,12,4,53,2,5,23));
+
+
+    //给arguments添加数组的方法（未完成）
+    // arguments.__proto__.slice = [].__proto__.
+
+
+    //JSON-->JavaScript对象表示法
+    //1、健值对均需用""号
+    //2、parse
+    //3、
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: antiquewhite;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">123</div>
+
+
+<script type="text/javascript">
+    var time = new Date;
+    var div1 = document.getElementById("div1");
+    div1.innerHTML = time;
+    window.setInterval(fn,1000);
+    function fn(){
+        var time = new Date;
+        var a = time.getTime();
+
+        var time1 = new Date("2016/03/07 22:59:59");
+        div1.innerHTML = time1-time;
+    }
+</script>
+</body>
+</html>

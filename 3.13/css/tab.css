@@ -1,0 +1,34 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    -webkit-user-select:none;
+}
+#div1{
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+table{
+    width: 100%;
+}
+th,td{
+    text-align: center;
+}
+thead{
+    background-color: #c4ff82;
+}
+tr{
+    margin-top: 10px;
+}
+#div1 table tbody tr.bg{
+    background-color: #6cd6ff;
+}
+#div1 table thead tr th.click{
+    cursor: pointer;
+}

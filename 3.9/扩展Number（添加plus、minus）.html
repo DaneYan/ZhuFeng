@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+    Number.prototype.plus = function plus(){
+        return this = this+arguments[0];
+    };
+    Number.prototype.minus = function minus(){
+        return this-arguments[0];
+    };
+    var a = 9;
+    console.log(a.plus(5).minus(3));
+    console.log((8).plus(5).minus(3));
+
+
+    Array.prototype.mySplice = function mySpice(){
+
+    }
+
+
+</script>
+</body>
+</html>

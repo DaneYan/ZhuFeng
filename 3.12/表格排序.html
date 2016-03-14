@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格排序</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #div1{
+            margin: 10px 20px;
+            width: 300px;
+            height: 120px;
+            border-radius: 20px;
+            /*border: 1px black solid;*/
+            box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        #table1{
+            width: 100%;
+        }
+        #table1 tr{
+
+            height: 30px;
+            border: 1px solid black;
+            background-color: #ff0033;
+        }
+        th,td{
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <table id="table1">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>身高</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>白富美</td>
+            <td>19</td>
+            <td>170</td>
+        </tr>
+        <tr>
+            <td>高富帅</td>
+            <td>20</td>
+            <td>185</td>
+        </tr>
+        <tr>
+            <td>矮矬穷</td>
+            <td>30</td>
+            <td>160</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    var oTable = document.getElementById("table1");
+    var oTh = oTable.getElementsByTagName("th");
+    var oTbody = oTable.getElementsByTagName("tbody")[0];
+    //console.log(oTh);
+    var oTr = oTable.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+    //console.log(oTr);
+
+
+    function mySort(i){
+        var arr = [].slice.call(oTr,0);
+        arr.sort(function(a,b){
+            var qian = a.cells[i].innerHTML;
+            var hou = b.cells[i].innerHTML;
+            if(isNaN(qian)) {
+                return qian.localeCompare(hou);
+            }
+            return qian- hou;
+        });
+        for(var i in arr ){
+            oTbody.appendChild(arr[i]);//如果页面上已经存在了,就不会再添加,而是移动
+        }
+    }
+
+    for(var i = 0;i<oTh.length;i++){
+        oTh[i].onclick = (function(i){
+            return function (){
+                mySort(i)
+            }
+        })(i);
+    }
+    console.log(oTh);
+</script>
+</body>
+</html>

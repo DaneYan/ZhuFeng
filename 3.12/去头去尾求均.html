@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    function avgFn(){
+        var arr = [];
+        for(var a in arguments){
+            arr[arr.length] = arguments[a];
+        }
+        arr.sort(function (a,b){return a-b;});
+        arr.pop();
+        arr.shift();
+        return (eval(arr.join("+"))/arr.length).toFixed(2);
+    }
+    var a = avgFn(1,2,3,4,32,12,4,543,23,5,323,40,0);
+    console.log(a);
+
+    function beArray(){
+        try{
+            var arr = [].sort.call(arguments,0);
+            return arr;
+        }catch (e){
+            console.log("用的ie吧");
+            throw new Error("dbhiahdsiuhfsiudhfiudsaij~~~");
+            /*var arr = [];
+            for(var i in arguments){
+                arr[i] = arguments[i];
+            }
+            return arr;*/
+        }/*finally {
+
+        }*/
+
+    }
+    beArray(1,2,4,2,4,5,2);
+
+</script>
+
+</body>
+</html>

@@ -31,12 +31,17 @@
     fn(1,2);
     fn(1,2,3);*/
 
-    function fn(){
-        return {
-            name:"hahaha"
-        }
+
+
+    function Nike(material){ //自定义创建的类(创建了一个Nike类)
+        this.material = material;
+        this.width = "";
+        this.height = "";
+        this.size = "";
+        this.price = function(){console.log("太贵了~")}
     }
-    console.dir(fn);
+    var a = {};
+    a.Nike();
 </script>
 
 </body>

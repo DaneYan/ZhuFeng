@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="div1">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</div>
+
+
+<script type="text/javascript"> 
+    //1、1严格模式-->"use strict"-->arguments的映射被切断
+    var arr = [12,23,24,24,25,12,5,65,4,3,65];
+    var max = Math.max.apply(arr,arr);
+    var b = eval("Math.max("+arr.toString()+")");
+    alert(b);
+    function  fn1(){
+        console.log(1);
+        console.log(this);
+    }
+
+    function fn2(){
+        console.log(2);
+        console.log(this);
+    }
+    var obj = {fn2:fn2};
+    ~(fn1,obj.fn2)();//window
+    ~(obj.fn2)();//object
+</script>
+
+</body>
+</html>
