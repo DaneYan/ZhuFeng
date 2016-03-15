@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#div1{
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
+    margin: 0 auto;
+    overflow: hidden;
+}
+#tab{
+    width: 100%;
+    -webkit-user-select: none;
+}
+#tab thead{
+    background-color: #ff0033;
+}
+#tab thead th{
+    cursor: pointer;
+}
+th,td{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}

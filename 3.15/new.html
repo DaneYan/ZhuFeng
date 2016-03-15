@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+            border: 0;
+        }
+
+        .clearfix {
+
+            /*position: absolute;
+            left: 100px;
+            display: inline-block;
+            outline: none;
+            text-decoration: none;
+            color: #000;
+            font-size: 32px;
+            padding: 5px 10px;*/
+            margin: 0 0 0 200px;
+        }
+
+        .clearfix:hover::before, a:hover::after {
+            position: absolute;
+        }
+
+        .clearfix:hover::before {
+            content: "\5B";
+            left: -20px;
+        }
+
+        .clearfix:hover::after {
+            content: "\5D";
+            right: -20px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<div class="clearfix">123</div>
+
+</body>
+</html>

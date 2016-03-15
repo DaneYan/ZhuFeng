@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #p1 {
+            width: 500px;
+            margin: 0 auto;
+            text-transform:;
+        }
+
+        #p1:hover::before, #p1:hover::after {
+            content: "(" attr(title) ")";
+        }
+
+        #div1, #div2, #div3{
+            width: 200px;
+            height: 30px;
+            background-color: lightsalmon;
+            margin: 10px auto;
+            position: relative;
+            /*background-image: linear-gradient(left lightblue lightsalmon);
+            background-image: -webkit-linear-gradient(left lightblue lightsalmon);
+            background: -ms-linear-gradient(left lightblue lightsalmon);
+            background: -moz-linear-gradient(left lightblue lightsalmon);
+            background: -o-linear-gradient(left lightblue lightsalmon);*/
+
+        }
+        p{
+            width: 200px;
+            /*height: 30px;*!*/
+            background-color: lightsalmon;
+            margin: 10px auto;
+            /*position: relative;*/
+            display:none;
+        }
+
+        #div1::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-width: 10px 10px;
+            border-style: solid;
+            border-color: #ff3300 rgba(0,0,0,0.0) rgba(0,0,0,0.0) rgba(0,0,0,0.0);
+            position: absolute;
+            top: 10px;
+            left:170px;
+        }
+
+        #div1:hover::after{
+            border-color: rgba(0,0,0,0.0) rgba(0,0,0,0.0) rgba(0,0,0,0.0) #ff3300;
+            top:5px;
+        }
+        #div1:hover{
+            display: block;
+        }
+        /*#div1::after {
+            content: "mkmsdkfmoimgio<br />mvklcxmvkfammvokmvklmkv";
+            display: block;
+            width: 200px;
+            !*height:;*!
+            !*margin: 10px auto;*!
+            position: absolute;
+            background-color: lightsalmon;
+            top: 40px;
+            left:170px;
+        }*/
+
+
+    </style>
+</head>
+<body>
+<p id="p1" title="hello">摸我</p>
+
+
+<div id="div1">简介</div>
+<p>mkmsdkfmoimgio<br />mvklcxmvkfammvokmvklmkv</p>
+<div id="div2">信息</div>
+<div id="div3">师资力量</div>
+
+<p id="ppp"></p>
+
+</body>
+</html>
